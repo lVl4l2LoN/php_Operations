@@ -27,32 +27,33 @@
             return $posts;
         }
         
+        echo 'before isset';
         //search
-        if(isset($_POST['search'])){
-            echo 'in isset';
-            $data = getPosts();
-            
-            $search_Query = "SELECT * FROM users WHERE id = $data[0]";
-            
-            $search_Result = mysqli_query($connect, $search_Query);
-            
-            if($search_Result){
-                if(mysqli_num_rows($search_Result)){
-                    while($row = mysqli_fetch_array($search_Result)){
-                        
-                        $id = $row['id'];
-                        $fname = $row['fname'];
-                        $lname = $row['lname'];
-                        $age = $row['age'];
-                    }
-                    echo $_SESSION['fname'];
-                }
-                else{
-                    echo 'No data for this Id';
-                }
+        if(isset($_POST['search']))
+{
+    $data = getPosts();
+    
+    $search_Query = "SELECT * FROM users WHERE id = $data[0]";
+    
+    $search_Result = mysqli_query($connect, $search_Query);
+    
+    if($search_Result)
+    {
+        if(mysqli_num_rows($search_Result))
+        {
+            while($row = mysqli_fetch_array($search_Result))
+            {
+                $id = $row['id'];
+                $fname = $row['fname'];
+                $lname = $row['lname'];
+                $age = $row['age'];
             }
-            else{
-                echo 'Result error';
-            }
+        }else{
+            echo 'No Data For This Id';
         }
+    }else{
+        echo 'Result Error';
+    }
+}
+
 ?>

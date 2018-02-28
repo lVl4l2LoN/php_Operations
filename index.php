@@ -11,7 +11,7 @@ and open the template in the editor.
 
 <html>
     <head>
-        <meta charset="UTF-8">
+        <!<meta charset="UTF-8">
         <title>PHP Insert Update Delete Search</title>
     </head>
     <body>
@@ -22,13 +22,14 @@ and open the template in the editor.
             <input type ="text" name ="fname" placeholder="First Name" value="<?php echo $fname;?>"><br><br>
             <input type ="text" name ="lname" placeholder="Last Name" value="<?php echo $lname;?>"><br><br>
             <input type ="number" name ="age" placeholder="Age" value= "<?php echo $age;?>" ><br><br>
-        </form>
+        
         <div>
             <input type="submit" name="insert" value="Add">
             <input type="submit" name="update" value="Update">
             <input type="submit" name="delete" value="Delete">
             <input type="submit" name="search" value="Search">
         </div>
+        </form>
     </body>
 </html>
 
