@@ -45,6 +45,7 @@
                         $lname = $row['lname'];
                         $age = $row['age'];
                     }
+                    echo $_SESSION['fname'];
                 }
                 else{
                     echo 'No data for this Id';

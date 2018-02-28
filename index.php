@@ -1,3 +1,5 @@
+<?php include("search.php");?>
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -6,7 +8,7 @@ and open the template in the editor.
 -->
 
 
-<?php include("search.php");?>
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -14,7 +16,7 @@ and open the template in the editor.
     </head>
     <body>
         
-        <form  method = "post" action = "">
+        <form  method = "post" action = "index.php">
             
             <input type ="number" name ="id" placeholder="Id" value= "<?php echo $id;?>" ><br><br>
             <input type ="text" name ="fname" placeholder="First Name" value="<?php echo $fname;?>"><br><br>
@@ -25,7 +27,7 @@ and open the template in the editor.
             <input type="submit" name="insert" value="Add">
             <input type="submit" name="update" value="Update">
             <input type="submit" name="delete" value="Delete">
-            <input type="submit" name="search" value="Find">
+            <input type="submit" name="search" value="Search">
         </div>
     </body>
 </html>
