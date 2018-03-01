@@ -1,4 +1,5 @@
-<?php include("search.php");?>
+<?php include("operations.php");?>
+
 
 <!DOCTYPE html>
 <!--
