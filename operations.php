@@ -77,4 +77,24 @@ if(isset($_POST['insert'])){
 
 }
 
+//delete
+if(isset($_POST['delete'])){
+    $data = getPosts();
+    $delete_Query = "DELETE FROM `users` WHERE `id` = $data[0]";
+    try {
+        $delete_Result = mysqli_query($connect,$delete_Query);
+        if($delete_Result){
+            if(mysqli_affected_rows($connect) > 0){
+                echo 'Data deleted';
+            }
+            else{
+                echo 'Data Not deleted';
+            }
+        }
+    } catch (Exception $ex) {
+        echo 'Error Insert'.$ex->getMessage();
+    }
+
+}
+
 ?>
