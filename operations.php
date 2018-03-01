@@ -92,7 +92,27 @@ if(isset($_POST['delete'])){
             }
         }
     } catch (Exception $ex) {
-        echo 'Error Insert'.$ex->getMessage();
+        echo 'Error Update'.$ex->getMessage();
+    }
+
+}
+
+//update
+if(isset($_POST['update'])){
+    $data = getPosts();
+    $update_Query = "UPDATE `users` SET `fname`='$data[1]',`lname`='$data[2]',`age`=$data[3] WHERE `id` = $data[0]";
+    try {
+        $update_Result = mysqli_query($connect,$update_Query);
+        if($update_Result){
+            if(mysqli_affected_rows($connect) > 0){
+                echo 'Data updated';
+            }
+            else{
+                echo 'Data Not Updated';
+            }
+        }
+    } catch (Exception $ex) {
+        echo 'Error Update'.$ex->getMessage();
     }
 
 }
